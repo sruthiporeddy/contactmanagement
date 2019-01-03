@@ -1,0 +1,62 @@
+
+<app-header></app-header>
+<div class="mt100">
+    <div class="container col-6 mLauto">
+          <p class="text-danger text-center">{{errorMessage}}</p>
+          <form  #createcontact= "ngForm" (ngSubmit)="addcontact(createcontact)" name ="contactform">
+              <!-- <div class="form-group">
+                  <label for="contactname">Id Number:</label>
+                  <input type="text"  class="form-control"  required name="contactId" [(ngModel)]="contactInfo.contactId" #contactId= "ngModel"
+                  [class.is-invalid]="contactId.invalid && contactId.touched"
+                   id="contactId" placeholder="Enter contactId">
+                   <div *ngIf="contactId?.invalid && contactId.touched">
+                      <small class="text-danger" *ngIf="contactId.errors?.required">contactId is required</small>
+                  </div>
+                </div> -->
+              <div class="form-group">
+                  <label for="contactname" class="mr-sm-2">Name:</label>
+                  <input type="text"  class="form-control mr-sm-2"   name="contactname" ngModel #contactname= "ngModel"
+                  [class.is-invalid]="contactname.invalid && contactname.touched"
+                   id="contactname" placeholder="Enter contactname" required>
+                   <div *ngIf="contactname?.invalid && contactname.touched">
+                      <small class="text-danger" *ngIf="contactname.errors?.required">Name is required</small>
+                  </div>
+                </div>
+
+
+             <div class="form-group">
+                      <label for="phonenumber" class="mr-sm-2">Phonenumber:</label>
+                      <input type="text"  class="form-control mr-sm-2"   name="phonenumber" ngModel #phonenumber= "ngModel"
+                      [class.is-invalid]="phonenumber.invalid && phonenumber.touched"
+                       id="phonenumber" placeholder="Enter phonenumber" required>
+                       <div *ngIf="phonenumber?.invalid && phonenumber.touched">
+                          <small class="text-danger" *ngIf="phonenumber.errors?.required">Phonenumber is required</small>
+                      </div>
+              </div>
+              <div class="form-group">
+                  <label for="address" class="mr-sm-2">Address:</label>
+                  <textarea  class="form-control mr-sm-2" name="address" ngModel #address= "ngModel"
+                   id="address" placeholder="Enter address" [class.is-invalid]="address.invalid && address.touched" required> </textarea>
+                   <div *ngIf="address?.invalid && address.touched">
+                      <small class="text-danger" *ngIf="address.errors?.required">Address is required</small>
+                  </div>
+              </div>
+
+              <div class= "text-center">
+                <button type="submit" [disabled]="createcontact.invalid" class="btn btn-primary" >Add to Contacts</button>
+              </div>
+            </form>
+             <div class= "text-center mtop10">
+                <p class= "text-success" >{{addContactMess}}</p>
+            </div>
+             <div class= "text-center mtop10">
+              <a class= "btn btn-primary" routerLink="/contact/display" routerLinkActive="active">Go Back To Contacts</a>
+             </div>
+      </div>
+
+
+
+  </div>
+
+<app-footer></app-footer>
+

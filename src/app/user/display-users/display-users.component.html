@@ -1,0 +1,35 @@
+<app-header></app-header>
+
+<div class ="mt100 text-center container" *ngIf=!isContactAvailable>
+  <h3 class="alert-danger">{{noContactsMessage}}</h3>
+</div>
+<div class="container mt100" *ngIf=isContactAvailable>
+    <h2>Saved Contacts</h2>
+
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>PhoneNumber</th>
+          <th>Address</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor ="let contact of showContacts">
+          <td>{{contact.contactname}}</td>
+          <td>{{contact.phonenumber}}</td>
+          <td>{{contact.address}}</td>
+          <button class= "btn btn-primary mlr5" (click)="editcontact(contact)" >Edit</button>
+          <button class= "btn btn-danger mlr5" (click)="deleteContact(contact)" >Delete</button>
+        </tr>
+
+      </tbody>
+    </table>
+  </div>
+  <div class= "text-center mtop10">
+    <p class="text-success"> {{message}}</p>
+  </div>
+   <div class= "text-center" style="margin-bottom: 100px">
+   <a class= "btn btn-primary" routerLink="/contact/add" routerLinkActive ="active">Add contact</a>
+  </div>
+<app-footer></app-footer>

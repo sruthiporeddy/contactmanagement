@@ -1,0 +1,25 @@
+
+<header>
+    <div>
+      <nav class="navbar navbar-expand-lg navbar-light bg-blue container fixed-top">
+          <a class="navbar-brand textWhite" href="#" >Contact Management</a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav ml-auto">
+              <li class="nav-item ">
+                  <a class="nav-link textWhite" routerLink='/' routerActiveLink= "active">Home </a>
+              </li>
+              <li class="nav-item ">
+                  <a *ngIf="userService.isLoggedIn()" class="nav-link textWhite" routerLink='/login' routerActiveLink= "active" (click)="userService.userLogout()">Logout </a>
+              </li>
+
+            </ul>
+
+          </div>
+        </nav>
+      </div>
+  </header>
+
